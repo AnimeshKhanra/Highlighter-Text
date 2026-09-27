@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Highlighter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="header">
+      <div class="brand">
+        <span class="brand-icon">✏️</span>
+        <div class="brand-text">
+          <h1>Web Highlighter</h1>
+          <p id="page-host" class="page-host">Current Page</p>
+        </div>
+      </div>
+      <span id="badge-count" class="badge">0</span>
+    </header>
+
+    <section class="section default-color-section">
+      <label class="section-title">Default Highlight Color</label>
+      <div class="color-picker-row">
+        <div class="swatches" id="default-swatches">
+          <button type="button" class="swatch-btn" data-color="#fef08a" style="background-color: #fef08a;" title="Yellow"></button>
+          <button type="button" class="swatch-btn" data-color="#bbf7d0" style="background-color: #bbf7d0;" title="Green"></button>
+          <button type="button" class="swatch-btn" data-color="#bfdbfe" style="background-color: #bfdbfe;" title="Blue"></button>
+          <button type="button" class="swatch-btn" data-color="#fbcfe8" style="background-color: #fbcfe8;" title="Pink"></button>
+          <button type="button" class="swatch-btn" data-color="#fed7aa" style="background-color: #fed7aa;" title="Orange"></button>
+          <button type="button" class="swatch-btn" data-color="#e9d5ff" style="background-color: #e9d5ff;" title="Purple"></button>
+        </div>
+        <input type="color" id="custom-color-input" title="Custom color" value="#fef08a" class="custom-color-picker">
+      </div>
+    </section>
+
+    <section class="section highlights-section">
+      <div class="section-header">
+        <label class="section-title">Highlights on this page (<span id="items-count">0</span>)</label>
+        <button type="button" id="btn-export" class="text-btn" title="Export highlights">Export</button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search highlights on this page...">
+      </div>
+
+      <div id="highlights-list" class="highlights-list"></div>
+
+      <div id="empty-state" class="empty-state">
+        <span class="empty-icon">📝</span>
+        <p>No highlights on this page yet.</p>
+        <span class="empty-hint">Select any text on the page to highlight!</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <button type="button" id="btn-clear-all" class="btn btn-danger">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        </svg>
+        Clear All Highlights
+      </button>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
